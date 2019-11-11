@@ -59,7 +59,8 @@ class App extends Component {
     }
 
     addNewItem() {
-        let currentListSize = this.state.todoList.length;
+        let items = [...this.state.todoList];
+
         fetch(apiUrl + '/todos/', {
             method: 'POST',
             body: JSON.stringify({
@@ -80,8 +81,7 @@ class App extends Component {
                 }
             })
             .then(json => {
-                json.id = currentListSize+1;
-                let items = [...this.state.todoList];
+                console.log(json)
                 items.push(json);
                 this.setState({todoList: items});
             })
@@ -92,8 +92,10 @@ class App extends Component {
         if (itemId > 200) {
             //We have a newly added item that has been completed...lets fake the complete
             let items = [...this.state.todoList];
-            items[itemId-1].completed = true;
-            this.setState({todoList: items});
+            let index = this.getItemIndex(itemId, items, 'id');
+            if (index !== -1) {
+                this.setState({todoList: items});
+            }
         } else {
             fetch(apiUrl + '/todos/' + itemId, {
                 method: 'PUT',
