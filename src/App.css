@@ -1,0 +1,94 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin: 0 0 80px;
+  padding: 25px;
+}
+
+button {
+  padding: 11px 10px;
+  border: 1px solid #000;
+  color: #000;
+  background: #c9c9c9;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #0000;
+  color: #000;
+}
+
+li {
+  padding-bottom: 10px;
+}
+
+input {
+  padding: 10px 5px;
+  display: inline;
+  width: inherit;
+  margin: 25px 0px 25px 25px;
+}
+
+button.closeBtn {
+  float: right;
+  margin: 10px;
+  padding: 11px 15px;
+}
+
+.header {
+  height: 80px;
+  text-align: left;
+}
+
+h1.pageTitle {
+  display: inline-block;
+  vertical-align: text-bottom;
+  padding: 0 10px;
+}
+
+.appLogo {
+  max-width: 70px;
+}
+
+.row {
+  display: block;
+}
+
+@media screen and (min-width:640px) {
+  .row {
+    display:flex
+  }
+}
+
+.col {
+  padding: 1em;
+}
+
+nav {
+  width: 200px;
+}
+
+span.itemComplete {
+  text-decoration: line-through;
+  color: #696969;
+}
+
+span.notComplete {
+  margin-right: 10px;
+}
+
+footer {
+  background-color: orange;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
+  overflow:hidden;
+}
+
+.footerContent {
+  padding: 10px 25px;
+}
